@@ -705,6 +705,130 @@
       border-bottom: 2px solid var(--coral);
     }
 
+    .sample-showcase {
+      display: grid;
+      grid-template-columns: minmax(360px, .95fr) minmax(0, 1.05fr);
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .sample-hero-card {
+      min-height: 680px;
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .sample-hero-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 680px;
+      object-fit: cover;
+      opacity: .9;
+    }
+
+    .sample-hero-copy {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 26px;
+      background: linear-gradient(180deg, transparent, rgba(31,38,35,.86));
+    }
+
+    .sample-hero-copy span,
+    .sample-card span {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--amber);
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: .13em;
+    }
+
+    .sample-hero-copy h3 {
+      margin-bottom: 10px;
+      font-size: 30px;
+      line-height: 1.08;
+      word-break: keep-all;
+    }
+
+    .sample-hero-copy p {
+      margin: 0;
+      color: rgba(255,255,255,.74);
+      word-break: keep-all;
+    }
+
+    .sample-detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .sample-card {
+      min-height: 330px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--white);
+    }
+
+    .sample-card.featured {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: .92fr 1fr;
+    }
+
+    .sample-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 220px;
+      object-fit: cover;
+      background: var(--soft);
+    }
+
+    .sample-card-body {
+      padding: 20px;
+    }
+
+    .sample-card h3 {
+      margin-bottom: 10px;
+      font-size: 22px;
+      line-height: 1.16;
+      word-break: keep-all;
+    }
+
+    .sample-card p {
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 14px;
+      word-break: keep-all;
+    }
+
+    .spec-list {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .spec-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      border-top: 1px solid var(--line);
+      padding-top: 8px;
+    }
+
+    .spec-list b {
+      color: var(--ink);
+    }
+
     .size-guide {
       display: grid;
       grid-template-columns: 360px 1fr;
@@ -998,11 +1122,15 @@
       .quick-item:nth-child(2) { border-right: 0; }
       .quick-item:nth-child(1), .quick-item:nth-child(2) { border-bottom: 1px solid var(--line); }
 
-      .section-head, .fit-lab, .size-guide, .footer-inner {
+      .section-head, .fit-lab, .size-guide, .sample-showcase, .footer-inner {
         grid-template-columns: 1fr;
       }
 
       .guide-panel { position: static; }
+
+      .sample-card.featured {
+        grid-template-columns: 1fr;
+      }
 
       .process { grid-template-columns: repeat(3, 1fr); }
       .story-grid { grid-template-columns: 1fr; }
@@ -1066,6 +1194,19 @@
 
       .lab-visual, .lab-visual img { min-height: 420px; }
 
+      .sample-hero-card,
+      .sample-hero-card img {
+        min-height: 520px;
+      }
+
+      .sample-detail-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sample-card.featured {
+        grid-column: span 1;
+      }
+
       .breed-row {
         grid-template-columns: 1fr;
         gap: 8px;
@@ -1076,7 +1217,7 @@
   </style>
 </head>
 <body>
-  <div class="topbar">2026 하반기 프렌치불독 체형핏 라인 런칭 준비 중 · 첫 구매 사이즈 상담 예약</div>
+  <div class="topbar">2026 하반기 프렌치불독 샘플 라인 준비 중 · 파랑 나시 / 골지 티셔츠 / 트위드 반팔</div>
 
   <header class="site-header">
     <nav class="nav" aria-label="주요 메뉴">
@@ -1087,8 +1228,7 @@
       <div class="nav-links" id="navLinks">
         <a href="#shop">SHOP</a>
         <a href="#fitlab">FIT LAB</a>
-        <a href="#guide">SIZE GUIDE</a>
-        <a href="#journal">JOURNAL</a>
+        <a href="#sample">SAMPLE</a>
         <a href="#contact">CONTACT</a>
       </div>
       <div class="nav-actions">
@@ -1126,8 +1266,8 @@
         <span>샘플 제작 후 걷기, 앉기, 옷 돌아감 여부를 체크</span>
       </div>
       <div class="quick-item">
-        <strong>사이즈 상담</strong>
-        <span>몸무게보다 실측을 기준으로 첫 구매 실패를 줄이는 안내</span>
+        <strong>스튜디오 제품컷</strong>
+        <span>막 찍은 샘플 사진 대신 원단과 형태가 보이는 상품 이미지로 정리</span>
       </div>
     </div>
 
@@ -1205,7 +1345,7 @@
     <section class="section" id="fitlab" aria-labelledby="fitTitle">
       <div class="container fit-lab">
         <div class="lab-visual">
-          <img src="https://images.unsplash.com/photo-1541364983171-a8ba01e95cfc?auto=format&fit=crop&w=1100&q=82" alt="반려견 의류 착용 이미지">
+          <img src="assets/french-rib-tee.png" alt="프렌치불독 골지 티셔츠 착용컷">
           <div class="measure-card">
             <strong>Fit Check Points</strong>
             <ul class="measure-list">
@@ -1232,77 +1372,54 @@
       </div>
     </section>
 
-    <section class="section alt" id="journal" aria-labelledby="journalTitle">
+    <section class="section alt" id="sample" aria-labelledby="sampleTitle">
       <div class="container">
         <div class="section-head">
           <div>
-            <p class="section-kicker">BLOG & CONTENT</p>
-            <h2 id="journalTitle">INU WEAR 강아지 옷 연구소</h2>
+            <p class="section-kicker">SAMPLE STUDIO</p>
+            <h2 id="sampleTitle">막 찍은 샘플컷 대신, 제품이 보이는 화면</h2>
           </div>
-          <p>블로그는 강아지 옷 핏, 생활 습관, 보호자가 놓치기 쉬운 신호를 기록합니다. FIT LAB은 건강과 생활 신호를, BODY STUDY는 견종별 체형과 패턴 기준을 다룹니다.</p>
+          <p>샘플의 원단감은 살리고 배경은 정리했습니다. 착용컷에서는 실제 핏을, 스튜디오컷에서는 옷의 형태와 소재를 확인할 수 있습니다.</p>
         </div>
-        <div class="story-grid">
-          <article class="story">
-            <div>
-              <span class="story-label">FIT LAB</span>
-              <h3>기침과 역재채기, 보호자가 보는 기준</h3>
-              <p>컥컥, 꽥꽥, 훅훅처럼 헷갈리는 호흡 소리를 들이마심과 내뱉음 기준으로 정리합니다.</p>
+        <div class="sample-showcase">
+          <article class="sample-hero-card">
+            <img src="assets/french-tweed-short.png" alt="프렌치불독 트위드 반팔 착용컷">
+            <div class="sample-hero-copy">
+              <span>FRENCH BULLDOG FIT</span>
+              <h3>첫 라인은 프렌치불독 착용감부터</h3>
+              <p>넥라인, 암홀, 가슴 앞판, 등기장을 실제 착용 상태에서 확인하며 샘플을 보완합니다.</p>
             </div>
-            <a href="https://blog.naver.com/inu_wear" target="_blank" rel="noreferrer">블로그 보기</a>
           </article>
-          <article class="story">
-            <div>
-              <span class="story-label">BODY STUDY</span>
-              <h3>이탈리안그레이하운드 패턴 장력 분석</h3>
-              <p>긴 목, 깊은 흉곽, 좁은 허리 체형에서 움직일 때 원단 장력이 이동하는 지점을 기록합니다.</p>
-            </div>
-            <a href="#fitlab">연구 방식 보기</a>
-          </article>
-          <article class="story">
-            <div>
-              <span class="story-label">FIT LAB DAY</span>
-              <h3>여름에 자꾸 긁는다면 먼저 볼 신호</h3>
-              <p>계절 변화, 피부 상태, 생활 습관을 함께 살펴 제품 소재와 착용 시간 안내로 연결합니다.</p>
-            </div>
-            <a href="#guide">사이즈 가이드 보기</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="guide" aria-labelledby="guideTitle">
-      <div class="container size-guide">
-        <aside class="guide-panel">
-          <h2 id="guideTitle">사이즈 상담</h2>
-          <p>실측값을 입력하면 첫 구매 전 어떤 핏 체크가 필요한지 안내합니다. 실제 주문 전에는 사진과 함께 상담하는 흐름으로 연결하면 좋습니다.</p>
-          <div class="input-grid">
-            <label>목둘레(cm)<input id="neckInput" type="number" min="0" placeholder="예: 38"></label>
-            <label>가슴둘레(cm)<input id="chestInput" type="number" min="0" placeholder="예: 56"></label>
-            <label>등길이(cm)<input id="backInput" type="number" min="0" placeholder="예: 34"></label>
-            <button class="btn btn-primary" id="guideButton" type="button">핏 체크하기</button>
-          </div>
-          <div class="guide-result" id="guideResult">목, 가슴, 등길이를 입력하면 맞춤 체크 포인트가 표시됩니다.</div>
-        </aside>
-        <div class="breed-table" aria-label="견종별 출시 로드맵">
-          <div class="breed-row">
-            <strong>프렌치불독</strong>
-            <p>굵은 목, 넓은 가슴, 짧은 등길이에 맞춰 넥라인과 앞판 구조를 안정적으로 설계합니다.</p>
-            <span class="month">2026.07</span>
-          </div>
-          <div class="breed-row">
-            <strong>이탈리안그레이하운드</strong>
-            <p>긴 목, 깊은 가슴, 좁은 허리, 긴 다리 움직임을 고려한 슬림 라인입니다.</p>
-            <span class="month">2026.09</span>
-          </div>
-          <div class="breed-row">
-            <strong>웰시코기</strong>
-            <p>긴 몸통과 짧은 다리를 고려해 배 부분이 끌리지 않도록 밑단 높이를 조정합니다.</p>
-            <span class="month">2026.10</span>
-          </div>
-          <div class="breed-row">
-            <strong>닥스훈트</strong>
-            <p>긴 등길이와 낮은 체고에 맞춰 허리와 배 부분이 뜨지 않는 전용 패턴을 만듭니다.</p>
-            <span class="month">2026.11</span>
+          <div class="sample-detail-grid">
+            <article class="sample-card featured">
+              <img src="assets/studio-tweed-detail.png" alt="트위드 반팔 스튜디오 제품컷">
+              <div class="sample-card-body">
+                <span>SAMPLE 03</span>
+                <h3>트위드 반팔</h3>
+                <p>구조감 있는 트위드 원단으로 브랜드의 첫인상을 가장 또렷하게 보여주는 샘플입니다.</p>
+                <ul class="spec-list">
+                  <li><b>Fabric</b><span>cream tweed</span></li>
+                  <li><b>Fit</b><span>short sleeve</span></li>
+                  <li><b>Point</b><span>structured body line</span></li>
+                </ul>
+              </div>
+            </article>
+            <article class="sample-card">
+              <img src="assets/studio-blue-sleeveless-detail.png" alt="파랑 나시 스튜디오 제품컷">
+              <div class="sample-card-body">
+                <span>SAMPLE 01</span>
+                <h3>파랑 나시</h3>
+                <p>앞다리 움직임이 편하도록 소매를 덜어낸 산뜻한 데일리 샘플입니다.</p>
+              </div>
+            </article>
+            <article class="sample-card">
+              <img src="assets/studio-rib-tee-detail.png" alt="골지 티셔츠 스튜디오 제품컷">
+              <div class="sample-card-body">
+                <span>SAMPLE 02</span>
+                <h3>골지 티셔츠</h3>
+                <p>부드러운 골지 텍스처와 안정적인 목 라인을 테스트하는 기본형입니다.</p>
+              </div>
+            </article>
           </div>
         </div>
       </div>
@@ -1311,24 +1428,24 @@
     <section class="notice-band" id="contact" aria-label="고객 안내">
       <div class="notice-grid">
         <div class="notice">
-          <b>KAKAO TALK</b>
-          <strong>사이즈 상담</strong>
-          <p>목둘레, 가슴둘레, 등길이와 착용 사진을 보내면 구매 전 핏을 함께 확인합니다.</p>
+          <b>SAMPLE DROP</b>
+          <strong>프렌치불독 3종</strong>
+          <p>파랑 나시, 골지 티셔츠, 트위드 반팔을 중심으로 첫 라인을 정리합니다.</p>
         </div>
         <div class="notice">
-          <b>MEMBERSHIP</b>
-          <strong>첫 구매 혜택</strong>
-          <p>런칭 기간에는 첫 구매 고객에게 사이즈 체크 가이드를 함께 제공합니다.</p>
+          <b>FIT FIRST</b>
+          <strong>착용감 우선</strong>
+          <p>사진이 예쁜 것보다 실제로 입었을 때 돌아가지 않는 구조를 먼저 봅니다.</p>
         </div>
         <div class="notice">
-          <b>EXCHANGE</b>
-          <strong>교환 안내</strong>
-          <p>실측 기준과 착용 가능 체형을 명확히 안내해 교환 리스크를 줄입니다.</p>
+          <b>DETAIL</b>
+          <strong>원단과 형태</strong>
+          <p>스튜디오 제품컷으로 소재감, 넥라인, 소매, 등기장을 더 또렷하게 보여줍니다.</p>
         </div>
         <div class="notice">
           <b>ABOUT</b>
           <strong>INU WEAR</strong>
-          <p>데이터 기반 반려견 의류 브랜드로 2026년 하반기 매출 1억 원을 목표로 합니다.</p>
+          <p>견종별 체형과 움직임을 연구해 맞는 옷을 먼저 만드는 반려견 의류 브랜드입니다.</p>
         </div>
       </div>
     </section>
@@ -1348,9 +1465,9 @@
       </div>
       <div>
         <strong>CHANNEL</strong>
-        <a href="https://blog.naver.com/inu_wear" target="_blank" rel="noreferrer">Naver Blog</a>
-        <a href="#journal">Fit Lab Journal</a>
-        <a href="#guide">Size Guide</a>
+        <a href="#shop">Sample Shop</a>
+        <a href="#fitlab">Fit Lab</a>
+        <a href="#sample">Sample Studio</a>
       </div>
       <div>
         <strong>ROADMAP</strong>
@@ -1374,7 +1491,7 @@
         <strong>합계</strong>
         <strong id="cartTotal">0원</strong>
       </div>
-      <button class="btn btn-dark" type="button">상담 후 주문하기</button>
+      <button class="btn btn-dark" type="button">샘플 주문 준비중</button>
     </div>
   </aside>
 
@@ -1394,7 +1511,7 @@
         image: "assets/french-blue-sleeveless.png",
         gallery: [
           { label: "착용", src: "assets/french-blue-sleeveless.png" },
-          { label: "원단", src: "assets/sample-blue-sleeveless-detail.jpeg" },
+          { label: "제품", src: "assets/studio-blue-sleeveless-detail.png" },
           { label: "핏", src: "assets/french-blue-sleeveless.png" }
         ],
         colors: ["#8bb9d6", "#d8d4ca", "#fbfaf6"]
@@ -1411,7 +1528,7 @@
         image: "assets/french-rib-tee.png",
         gallery: [
           { label: "착용", src: "assets/french-rib-tee.png" },
-          { label: "패턴", src: "assets/sample-rib-tee-detail.jpeg" },
+          { label: "제품", src: "assets/studio-rib-tee-detail.png" },
           { label: "넥", src: "assets/french-rib-tee.png" }
         ],
         colors: ["#ede8dc", "#c8bcae", "#fbfaf6"]
@@ -1428,8 +1545,8 @@
         image: "assets/french-tweed-short.png",
         gallery: [
           { label: "착용", src: "assets/french-tweed-short.png" },
-          { label: "앞", src: "assets/sample-tweed-front.jpeg" },
-          { label: "뒤", src: "assets/sample-tweed-back.jpeg" }
+          { label: "제품", src: "assets/studio-tweed-detail.png" },
+          { label: "핏", src: "assets/french-tweed-short.png" }
         ],
         colors: ["#f1e7d5", "#d8b86a", "#7c8f7a"]
       },
@@ -1494,8 +1611,6 @@
     const toast = document.querySelector("#toast");
     const menuButton = document.querySelector("#menuButton");
     const navLinks = document.querySelector("#navLinks");
-    const guideButton = document.querySelector("#guideButton");
-    const guideResult = document.querySelector("#guideResult");
     let currentFilter = "all";
     let cart = [];
 
@@ -1629,25 +1744,6 @@
 
     navLinks.addEventListener("click", () => {
       navLinks.classList.remove("open");
-    });
-
-    guideButton.addEventListener("click", () => {
-      const neck = Number(document.querySelector("#neckInput").value);
-      const chest = Number(document.querySelector("#chestInput").value);
-      const back = Number(document.querySelector("#backInput").value);
-      if (!neck || !chest || !back) {
-        guideResult.textContent = "세 가지 실측값을 모두 입력해 주세요.";
-        return;
-      }
-      if (chest - neck >= 16 && back <= 38) {
-        guideResult.textContent = "넓은 가슴과 짧은 등 비율입니다. 프렌치불독 핏처럼 앞판 여유와 짧은 기장을 우선 확인하세요.";
-      } else if (back >= 42 && chest < 50) {
-        guideResult.textContent = "등길이에 비해 가슴이 슬림한 편입니다. 닥스훈트 또는 롱바디 핏처럼 허리 뜸을 체크하세요.";
-      } else if (back >= 40 && chest >= 50) {
-        guideResult.textContent = "롱바디 체형 가능성이 있습니다. 배 부분이 끌리지 않는 밑단 높이와 암홀 위치를 확인하세요.";
-      } else {
-        guideResult.textContent = "기본 체형핏 범위입니다. 목이 뜨는지, 앞다리 움직임이 편한지 착용 사진으로 한 번 더 확인하세요.";
-      }
     });
 
     renderProducts();
