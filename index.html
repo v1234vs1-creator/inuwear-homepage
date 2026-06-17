@@ -1,0 +1,1657 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>INU WEAR | 견종별 체형핏 강아지 의류</title>
+  <meta name="description" content="이누웨어는 견종별 체형과 움직임을 연구해 강아지에게 편하게 맞는 옷을 만드는 데이터 기반 반려견 의류 브랜드입니다.">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://images.pexels.com">
+  <style>
+    :root {
+      --ink: #1f2623;
+      --muted: #69736d;
+      --line: #dce4de;
+      --paper: #fbfaf6;
+      --soft: #eff5ef;
+      --mint: #b9d9c7;
+      --green: #456f58;
+      --coral: #e97d64;
+      --amber: #f1c768;
+      --blue: #8bb9d6;
+      --white: #fff;
+      --shadow: 0 18px 45px rgba(31, 38, 35, .12);
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+      line-height: 1.55;
+    }
+
+    img { display: block; max-width: 100%; }
+
+    a { color: inherit; text-decoration: none; }
+
+    button, input, select {
+      font: inherit;
+    }
+
+    .topbar {
+      min-height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 16px;
+      background: var(--ink);
+      color: var(--white);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(31, 38, 35, .1);
+      background: rgba(251, 250, 246, .92);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      max-width: 1220px;
+      min-height: 72px;
+      margin: 0 auto;
+      padding: 0 22px;
+      display: grid;
+      grid-template-columns: 180px 1fr auto;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .logo {
+      display: inline-flex;
+      flex-direction: column;
+      line-height: 1;
+      letter-spacing: .08em;
+      font-weight: 900;
+    }
+
+    .logo small {
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .icon-button {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      color: var(--ink);
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .icon-button:hover { border-color: var(--green); }
+
+    .cart-count {
+      position: absolute;
+      right: -4px;
+      top: -5px;
+      min-width: 19px;
+      height: 19px;
+      padding: 0 5px;
+      display: grid;
+      place-items: center;
+      border-radius: 99px;
+      background: var(--coral);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .mobile-toggle { display: none; }
+
+    .hero {
+      min-height: calc(100svh - 108px);
+      display: grid;
+      align-items: end;
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background: #d8e4d6;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(90deg, rgba(31, 38, 35, .78) 0%, rgba(31, 38, 35, .43) 44%, rgba(31, 38, 35, .08) 100%),
+        url("assets/french-tweed-short.png") center 44% / cover;
+      transform: scale(1.02);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 120px;
+      z-index: -1;
+      background: linear-gradient(180deg, transparent, var(--paper));
+    }
+
+    .hero-inner {
+      width: min(1220px, calc(100% - 44px));
+      margin: 0 auto;
+      padding: 78px 0 96px;
+      color: var(--white);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 18px;
+      color: rgba(255, 255, 255, .86);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .14em;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: var(--amber);
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      max-width: 720px;
+      margin-bottom: 22px;
+      font-size: clamp(44px, 6vw, 92px);
+      line-height: .96;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      max-width: 620px;
+      margin-bottom: 32px;
+      color: rgba(255, 255, 255, .88);
+      font-size: 19px;
+      word-break: keep-all;
+    }
+
+    .hero-actions, .section-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      min-height: 46px;
+      padding: 0 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--coral);
+      color: var(--white);
+    }
+
+    .btn-secondary {
+      border-color: rgba(255, 255, 255, .5);
+      color: var(--white);
+      background: rgba(255, 255, 255, .1);
+    }
+
+    .btn-dark {
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .btn-light {
+      border-color: var(--line);
+      background: var(--white);
+    }
+
+    .quick-strip {
+      width: min(1220px, calc(100% - 44px));
+      margin: -44px auto 76px;
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--line);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .quick-item {
+      min-height: 112px;
+      padding: 24px;
+      border-right: 1px solid var(--line);
+    }
+
+    .quick-item:last-child { border-right: 0; }
+
+    .quick-item strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 17px;
+    }
+
+    .quick-item span {
+      color: var(--muted);
+      font-size: 14px;
+      word-break: keep-all;
+    }
+
+    .section {
+      padding: 78px 22px;
+    }
+
+    .section.alt { background: var(--soft); }
+
+    .container {
+      max-width: 1220px;
+      margin: 0 auto;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 430px);
+      align-items: end;
+      gap: 34px;
+      margin-bottom: 34px;
+    }
+
+    .section-kicker {
+      margin-bottom: 10px;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .14em;
+    }
+
+    h2 {
+      margin-bottom: 0;
+      font-size: clamp(30px, 4vw, 54px);
+      line-height: 1.06;
+      letter-spacing: 0;
+      word-break: keep-all;
+    }
+
+    .section-head p {
+      margin-bottom: 0;
+      color: var(--muted);
+      word-break: keep-all;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .category {
+      min-height: 280px;
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .category img {
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
+      object-fit: cover;
+      opacity: .78;
+      transition: transform .5s ease, opacity .5s ease;
+    }
+
+    .category:hover img {
+      opacity: .92;
+      transform: scale(1.04);
+    }
+
+    .category-body {
+      position: absolute;
+      inset: auto 0 0;
+      padding: 22px;
+      background: linear-gradient(180deg, transparent, rgba(31, 38, 35, .82));
+    }
+
+    .category-body span {
+      display: block;
+      margin-bottom: 4px;
+      color: rgba(255,255,255,.72);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .13em;
+    }
+
+    .category-body strong {
+      font-size: 22px;
+      line-height: 1.2;
+    }
+
+    .product-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tab {
+      min-height: 38px;
+      padding: 0 15px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--white);
+      cursor: pointer;
+      font-weight: 900;
+      color: var(--muted);
+    }
+
+    .tab.active {
+      color: var(--white);
+      background: var(--green);
+      border-color: var(--green);
+    }
+
+    .select-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    select {
+      min-height: 38px;
+      padding: 0 34px 0 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--white);
+      color: var(--ink);
+      font-weight: 800;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .product-card {
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--white);
+    }
+
+    .product-media {
+      aspect-ratio: 4 / 5;
+      position: relative;
+      overflow: hidden;
+      background: #e4ebe5;
+    }
+
+    .product-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .45s ease;
+    }
+
+    .product-card:hover .product-media img { transform: scale(1.04); }
+
+    .badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .angle-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      padding: 10px 10px 0;
+      background: var(--white);
+    }
+
+    .angle-thumb {
+      height: 62px;
+      padding: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--soft);
+      cursor: pointer;
+    }
+
+    .angle-thumb.active {
+      border-color: var(--coral);
+      box-shadow: 0 0 0 2px rgba(233, 125, 100, .18);
+    }
+
+    .angle-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-body { padding: 18px; }
+
+    .fit-line {
+      margin-bottom: 8px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+
+    .product-title {
+      min-height: 48px;
+      margin-bottom: 10px;
+      font-size: 17px;
+      line-height: 1.35;
+      font-weight: 900;
+      word-break: keep-all;
+    }
+
+    .product-desc {
+      min-height: 44px;
+      margin-bottom: 14px;
+      color: var(--muted);
+      font-size: 14px;
+      word-break: keep-all;
+    }
+
+    .swatches {
+      display: flex;
+      gap: 7px;
+      margin-bottom: 14px;
+    }
+
+    .swatch {
+      width: 18px;
+      height: 18px;
+      border: 1px solid rgba(31,38,35,.18);
+      border-radius: 50%;
+    }
+
+    .product-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: 950;
+    }
+
+    .add-cart {
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 50%;
+      background: var(--coral);
+      color: var(--white);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      font-weight: 950;
+      font-size: 20px;
+    }
+
+    .fit-lab {
+      display: grid;
+      grid-template-columns: minmax(0, .92fr) minmax(320px, 1.08fr);
+      gap: 46px;
+      align-items: center;
+    }
+
+    .lab-visual {
+      min-height: 560px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      background: var(--ink);
+    }
+
+    .lab-visual img {
+      width: 100%;
+      height: 100%;
+      min-height: 560px;
+      object-fit: cover;
+      opacity: .84;
+    }
+
+    .measure-card {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      width: min(330px, calc(100% - 36px));
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,.28);
+      background: rgba(255,255,255,.88);
+      backdrop-filter: blur(12px);
+      border-radius: var(--radius);
+    }
+
+    .measure-card strong {
+      display: block;
+      margin-bottom: 12px;
+      font-size: 18px;
+    }
+
+    .measure-list {
+      display: grid;
+      gap: 9px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .measure-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      border-bottom: 1px solid rgba(31,38,35,.12);
+      padding-bottom: 7px;
+    }
+
+    .lab-copy h2 { margin-bottom: 18px; }
+
+    .lab-copy p {
+      color: var(--muted);
+      word-break: keep-all;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .process-step {
+      min-height: 116px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      border-radius: var(--radius);
+    }
+
+    .process-step b {
+      display: block;
+      color: var(--coral);
+      margin-bottom: 8px;
+    }
+
+    .process-step span {
+      display: block;
+      font-weight: 900;
+      line-height: 1.25;
+      word-break: keep-all;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .story {
+      min-height: 310px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+    }
+
+    .story:nth-child(2) { background: #fff7ec; }
+    .story:nth-child(3) { background: #eef6fa; }
+
+    .story-label {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .13em;
+    }
+
+    .story h3 {
+      margin: 18px 0 12px;
+      font-size: 25px;
+      line-height: 1.18;
+      word-break: keep-all;
+    }
+
+    .story p {
+      color: var(--muted);
+      word-break: keep-all;
+    }
+
+    .story a {
+      width: fit-content;
+      font-weight: 950;
+      color: var(--ink);
+      border-bottom: 2px solid var(--coral);
+    }
+
+    .size-guide {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .guide-panel {
+      padding: 24px;
+      border-radius: var(--radius);
+      background: var(--green);
+      color: var(--white);
+      position: sticky;
+      top: 104px;
+    }
+
+    .guide-panel h2 {
+      margin-bottom: 15px;
+      font-size: 32px;
+    }
+
+    .guide-panel p {
+      margin-bottom: 22px;
+      color: rgba(255,255,255,.78);
+      word-break: keep-all;
+    }
+
+    .input-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    label {
+      display: grid;
+      gap: 7px;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    input {
+      width: 100%;
+      min-height: 42px;
+      padding: 0 12px;
+      border: 1px solid rgba(255,255,255,.28);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.14);
+      color: var(--white);
+      outline: none;
+    }
+
+    input::placeholder { color: rgba(255,255,255,.55); }
+
+    .guide-result {
+      min-height: 74px;
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.12);
+      color: rgba(255,255,255,.88);
+      font-weight: 800;
+      word-break: keep-all;
+    }
+
+    .breed-table {
+      display: grid;
+      gap: 12px;
+    }
+
+    .breed-row {
+      display: grid;
+      grid-template-columns: 180px 1fr 150px;
+      gap: 18px;
+      align-items: center;
+      min-height: 96px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+    }
+
+    .breed-row strong {
+      font-size: 19px;
+      word-break: keep-all;
+    }
+
+    .breed-row p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      word-break: keep-all;
+    }
+
+    .month {
+      justify-self: end;
+      padding: 8px 11px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 950;
+      white-space: nowrap;
+    }
+
+    .notice-band {
+      padding: 58px 22px;
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .notice-grid {
+      max-width: 1220px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,.16);
+      border: 1px solid rgba(255,255,255,.16);
+    }
+
+    .notice {
+      min-height: 180px;
+      padding: 24px;
+      background: var(--ink);
+    }
+
+    .notice b {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--amber);
+      font-size: 14px;
+      letter-spacing: .12em;
+    }
+
+    .notice strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 20px;
+    }
+
+    .notice p {
+      margin: 0;
+      color: rgba(255,255,255,.7);
+      font-size: 14px;
+      word-break: keep-all;
+    }
+
+    .footer {
+      padding: 46px 22px 58px;
+      background: #151a18;
+      color: rgba(255,255,255,.66);
+    }
+
+    .footer-inner {
+      max-width: 1220px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr repeat(3, .8fr);
+      gap: 28px;
+    }
+
+    .footer strong {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--white);
+      font-size: 15px;
+    }
+
+    .footer p, .footer a {
+      margin: 0 0 8px;
+      display: block;
+      font-size: 13px;
+    }
+
+    .drawer {
+      position: fixed;
+      inset: 0 0 0 auto;
+      width: min(430px, 100%);
+      z-index: 50;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      background: var(--white);
+      box-shadow: -18px 0 44px rgba(31,38,35,.18);
+      transform: translateX(104%);
+      transition: transform .28s ease;
+    }
+
+    .drawer.open { transform: translateX(0); }
+
+    .drawer-head, .drawer-foot {
+      padding: 20px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .drawer-foot {
+      border-bottom: 0;
+      border-top: 1px solid var(--line);
+      display: grid;
+    }
+
+    .drawer-head strong {
+      font-size: 20px;
+    }
+
+    .drawer-body {
+      padding: 20px;
+      overflow: auto;
+    }
+
+    .cart-item {
+      display: grid;
+      grid-template-columns: 74px 1fr auto;
+      gap: 14px;
+      align-items: center;
+      padding-bottom: 14px;
+      margin-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .cart-item img {
+      width: 74px;
+      height: 84px;
+      object-fit: cover;
+      border-radius: var(--radius);
+    }
+
+    .cart-item strong {
+      display: block;
+      margin-bottom: 4px;
+      line-height: 1.25;
+      word-break: keep-all;
+    }
+
+    .cart-item span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .empty {
+      color: var(--muted);
+      word-break: keep-all;
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 22px;
+      z-index: 60;
+      transform: translate(-50%, 120px);
+      padding: 13px 17px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--white);
+      box-shadow: var(--shadow);
+      transition: transform .25s ease;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .toast.show { transform: translate(-50%, 0); }
+
+    @media (max-width: 980px) {
+      .nav {
+        grid-template-columns: 1fr auto auto;
+      }
+
+      .mobile-toggle { display: grid; }
+
+      .nav-links {
+        position: fixed;
+        top: 109px;
+        left: 0;
+        right: 0;
+        display: none;
+        padding: 18px 22px 22px;
+        background: var(--paper);
+        border-bottom: 1px solid var(--line);
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links.open { display: flex; }
+
+      .quick-strip, .category-grid, .product-grid, .notice-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .quick-item:nth-child(2) { border-right: 0; }
+      .quick-item:nth-child(1), .quick-item:nth-child(2) { border-bottom: 1px solid var(--line); }
+
+      .section-head, .fit-lab, .size-guide, .footer-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .guide-panel { position: static; }
+
+      .process { grid-template-columns: repeat(3, 1fr); }
+      .story-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .topbar { font-size: 12px; }
+
+      .nav {
+        min-height: 64px;
+        padding: 0 16px;
+      }
+
+      .logo small { display: none; }
+
+      .nav-actions .icon-button:first-child { display: none; }
+
+      .hero {
+        min-height: 760px;
+      }
+
+      .hero::before {
+      background:
+          linear-gradient(180deg, rgba(31, 38, 35, .42) 0%, rgba(31, 38, 35, .86) 72%),
+          url("assets/french-tweed-short.png") center top / cover;
+      }
+
+      .hero-inner {
+        width: calc(100% - 32px);
+        padding-bottom: 74px;
+      }
+
+      h1 { font-size: 43px; }
+      .hero-copy { font-size: 16px; }
+
+      .quick-strip {
+        width: calc(100% - 32px);
+        margin-top: -32px;
+        grid-template-columns: 1fr;
+      }
+
+      .quick-item {
+        min-height: auto;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .quick-item:last-child { border-bottom: 0; }
+
+      .section { padding: 58px 16px; }
+
+      .category-grid, .product-grid, .notice-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-toolbar { align-items: stretch; }
+      .tabs { width: 100%; }
+      .tab { flex: 1 1 auto; }
+
+      .process { grid-template-columns: 1fr; }
+
+      .lab-visual, .lab-visual img { min-height: 420px; }
+
+      .breed-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .month { justify-self: start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">2026 하반기 프렌치불독 체형핏 라인 런칭 준비 중 · 첫 구매 사이즈 상담 예약</div>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="주요 메뉴">
+      <a class="logo" href="#top" aria-label="INU WEAR 홈">
+        INU WEAR
+        <small>FIT FIRST DOG CLOTHES</small>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#shop">SHOP</a>
+        <a href="#fitlab">FIT LAB</a>
+        <a href="#guide">SIZE GUIDE</a>
+        <a href="#journal">JOURNAL</a>
+        <a href="#contact">CONTACT</a>
+      </div>
+      <div class="nav-actions">
+        <button class="icon-button" type="button" aria-label="검색">⌕</button>
+        <button class="icon-button" type="button" aria-label="장바구니 열기" id="cartButton">⌑<span class="cart-count" id="cartCount">0</span></button>
+        <button class="icon-button mobile-toggle" type="button" aria-label="메뉴 열기" id="menuButton">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="이누웨어 소개">
+      <div class="hero-inner">
+        <p class="eyebrow">INU WEAR SAMPLE LINE</p>
+        <h1>프렌치불독부터, 체형에 맞는 옷.</h1>
+        <p class="hero-copy">이누웨어는 샘플을 먼저 입혀보고 고칩니다. 파랑 나시, 골지 티셔츠, 트위드 반팔을 시작으로 넓은 가슴과 짧은 등길이에 맞는 프렌치불독 핏을 만듭니다.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#shop">샘플 3종 보기</a>
+          <a class="btn btn-secondary" href="#fitlab">핏 연구 과정 보기</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="quick-strip" aria-label="브랜드 핵심 가치">
+      <div class="quick-item">
+        <strong>샘플 착용 기반</strong>
+        <span>파랑 나시, 골지 티셔츠, 트위드 반팔을 실제 착용핏 기준으로 보완</span>
+      </div>
+      <div class="quick-item">
+        <strong>프렌치불독 우선</strong>
+        <span>굵은 목, 넓은 가슴, 짧은 등길이에 맞춘 첫 견종 전용 라인</span>
+      </div>
+      <div class="quick-item">
+        <strong>착용 테스트</strong>
+        <span>샘플 제작 후 걷기, 앉기, 옷 돌아감 여부를 체크</span>
+      </div>
+      <div class="quick-item">
+        <strong>사이즈 상담</strong>
+        <span>몸무게보다 실측을 기준으로 첫 구매 실패를 줄이는 안내</span>
+      </div>
+    </div>
+
+    <section class="section" aria-labelledby="categoryTitle">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">BEST CATEGORY</p>
+            <h2 id="categoryTitle">견종별로 다르게 시작하는 체형핏</h2>
+          </div>
+          <p>레퍼런스 쇼핑몰처럼 카테고리는 명확하게, 하지만 이누웨어는 상품보다 먼저 “왜 이 견종에게 이 패턴이 필요한지”를 보여줍니다.</p>
+        </div>
+        <div class="category-grid">
+          <a class="category" href="#shop" data-breed-link="french">
+            <img src="assets/french-blue-sleeveless.png" alt="프렌치불독 파랑 나시 착용컷">
+            <div class="category-body">
+              <span>SAMPLE READY</span>
+              <strong>프렌치불독 샘플 3종</strong>
+            </div>
+          </a>
+          <a class="category" href="#shop" data-breed-link="iggy">
+            <img src="assets/italian-greyhound-slim-tee.png" alt="이탈리안그레이하운드 착용컷">
+            <div class="category-body">
+              <span>NEXT LINE</span>
+              <strong>이탈리안그레이하운드 핏</strong>
+            </div>
+          </a>
+          <a class="category" href="#shop" data-breed-link="corgi">
+            <img src="https://images.unsplash.com/photo-1612536057832-2ff7ead58194?auto=format&fit=crop&w=700&q=80" alt="웰시코기">
+            <div class="category-body">
+              <span>BODY STUDY</span>
+              <strong>웰시코기 롱바디 핏</strong>
+            </div>
+          </a>
+          <a class="category" href="#shop" data-breed-link="dachshund">
+            <img src="https://images.unsplash.com/photo-1612195583950-b8fd34c87093?auto=format&fit=crop&w=700&q=80" alt="닥스훈트">
+            <div class="category-body">
+              <span>ROADMAP</span>
+              <strong>닥스훈트 롱백 핏</strong>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="shop" aria-labelledby="shopTitle">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">SHOP</p>
+            <h2 id="shopTitle">샘플 3종으로 시작하는 프렌치불독 핏</h2>
+          </div>
+          <p>현재 샘플은 파랑 나시, 골지 티셔츠, 트위드 반팔입니다. 메인은 착용컷으로 보여주고, 보조 컷에서 원단과 앞뒤 구조를 확인할 수 있게 구성했습니다.</p>
+        </div>
+        <div class="product-toolbar">
+          <div class="tabs" role="tablist" aria-label="견종 필터">
+            <button class="tab active" type="button" data-filter="all">전체</button>
+            <button class="tab" type="button" data-filter="french">프렌치불독</button>
+            <button class="tab" type="button" data-filter="iggy">이탈리안그레이하운드</button>
+            <button class="tab" type="button" data-filter="corgi">웰시코기</button>
+            <button class="tab" type="button" data-filter="dachshund">닥스훈트</button>
+          </div>
+          <label class="select-wrap">정렬
+            <select id="sortSelect">
+              <option value="launch">출시순</option>
+              <option value="low">낮은 가격순</option>
+              <option value="high">높은 가격순</option>
+            </select>
+          </label>
+        </div>
+        <div class="product-grid" id="productGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="fitlab" aria-labelledby="fitTitle">
+      <div class="container fit-lab">
+        <div class="lab-visual">
+          <img src="https://images.unsplash.com/photo-1541364983171-a8ba01e95cfc?auto=format&fit=crop&w=1100&q=82" alt="반려견 의류 착용 이미지">
+          <div class="measure-card">
+            <strong>Fit Check Points</strong>
+            <ul class="measure-list">
+              <li><span>목둘레</span><b>조임 없이 안정</b></li>
+              <li><span>가슴 깊이</span><b>앞판 여유 확보</b></li>
+              <li><span>등길이</span><b>남는 원단 최소화</b></li>
+              <li><span>암홀</span><b>앞다리 움직임 확보</b></li>
+            </ul>
+          </div>
+        </div>
+        <div class="lab-copy">
+          <p class="section-kicker">FIT LAB</p>
+          <h2 id="fitTitle">샘플을 입혀보고, 체형에 맞게 다시 고칩니다</h2>
+          <p>프렌치불독은 목이 굵고 가슴이 넓으며 등길이는 짧습니다. 그래서 이누웨어는 옷을 평평하게 놓고 보는 데서 끝내지 않고, 실제 착용 상태에서 넥라인, 암홀, 가슴 앞판, 등기장을 확인합니다.</p>
+          <p>이탈리안그레이하운드 라인은 프렌치불독과 다르게 긴 목, 깊은 흉곽, 좁은 허리 기준으로 따로 설계합니다. 견종이 바뀌면 사진도, 패턴도, 설명도 함께 바뀌어야 이누웨어답습니다.</p>
+          <div class="process" aria-label="제품 개발 과정">
+            <div class="process-step"><b>01</b><span>체형 조사</span></div>
+            <div class="process-step"><b>02</b><span>패턴 설계</span></div>
+            <div class="process-step"><b>03</b><span>샘플 제작</span></div>
+            <div class="process-step"><b>04</b><span>착용 테스트</span></div>
+            <div class="process-step"><b>05</b><span>핏 수정 판매</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="journal" aria-labelledby="journalTitle">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">BLOG & CONTENT</p>
+            <h2 id="journalTitle">INU WEAR 강아지 옷 연구소</h2>
+          </div>
+          <p>블로그는 강아지 옷 핏, 생활 습관, 보호자가 놓치기 쉬운 신호를 기록합니다. FIT LAB은 건강과 생활 신호를, BODY STUDY는 견종별 체형과 패턴 기준을 다룹니다.</p>
+        </div>
+        <div class="story-grid">
+          <article class="story">
+            <div>
+              <span class="story-label">FIT LAB</span>
+              <h3>기침과 역재채기, 보호자가 보는 기준</h3>
+              <p>컥컥, 꽥꽥, 훅훅처럼 헷갈리는 호흡 소리를 들이마심과 내뱉음 기준으로 정리합니다.</p>
+            </div>
+            <a href="https://blog.naver.com/inu_wear" target="_blank" rel="noreferrer">블로그 보기</a>
+          </article>
+          <article class="story">
+            <div>
+              <span class="story-label">BODY STUDY</span>
+              <h3>이탈리안그레이하운드 패턴 장력 분석</h3>
+              <p>긴 목, 깊은 흉곽, 좁은 허리 체형에서 움직일 때 원단 장력이 이동하는 지점을 기록합니다.</p>
+            </div>
+            <a href="#fitlab">연구 방식 보기</a>
+          </article>
+          <article class="story">
+            <div>
+              <span class="story-label">FIT LAB DAY</span>
+              <h3>여름에 자꾸 긁는다면 먼저 볼 신호</h3>
+              <p>계절 변화, 피부 상태, 생활 습관을 함께 살펴 제품 소재와 착용 시간 안내로 연결합니다.</p>
+            </div>
+            <a href="#guide">사이즈 가이드 보기</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="guide" aria-labelledby="guideTitle">
+      <div class="container size-guide">
+        <aside class="guide-panel">
+          <h2 id="guideTitle">사이즈 상담</h2>
+          <p>실측값을 입력하면 첫 구매 전 어떤 핏 체크가 필요한지 안내합니다. 실제 주문 전에는 사진과 함께 상담하는 흐름으로 연결하면 좋습니다.</p>
+          <div class="input-grid">
+            <label>목둘레(cm)<input id="neckInput" type="number" min="0" placeholder="예: 38"></label>
+            <label>가슴둘레(cm)<input id="chestInput" type="number" min="0" placeholder="예: 56"></label>
+            <label>등길이(cm)<input id="backInput" type="number" min="0" placeholder="예: 34"></label>
+            <button class="btn btn-primary" id="guideButton" type="button">핏 체크하기</button>
+          </div>
+          <div class="guide-result" id="guideResult">목, 가슴, 등길이를 입력하면 맞춤 체크 포인트가 표시됩니다.</div>
+        </aside>
+        <div class="breed-table" aria-label="견종별 출시 로드맵">
+          <div class="breed-row">
+            <strong>프렌치불독</strong>
+            <p>굵은 목, 넓은 가슴, 짧은 등길이에 맞춰 넥라인과 앞판 구조를 안정적으로 설계합니다.</p>
+            <span class="month">2026.07</span>
+          </div>
+          <div class="breed-row">
+            <strong>이탈리안그레이하운드</strong>
+            <p>긴 목, 깊은 가슴, 좁은 허리, 긴 다리 움직임을 고려한 슬림 라인입니다.</p>
+            <span class="month">2026.09</span>
+          </div>
+          <div class="breed-row">
+            <strong>웰시코기</strong>
+            <p>긴 몸통과 짧은 다리를 고려해 배 부분이 끌리지 않도록 밑단 높이를 조정합니다.</p>
+            <span class="month">2026.10</span>
+          </div>
+          <div class="breed-row">
+            <strong>닥스훈트</strong>
+            <p>긴 등길이와 낮은 체고에 맞춰 허리와 배 부분이 뜨지 않는 전용 패턴을 만듭니다.</p>
+            <span class="month">2026.11</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="notice-band" id="contact" aria-label="고객 안내">
+      <div class="notice-grid">
+        <div class="notice">
+          <b>KAKAO TALK</b>
+          <strong>사이즈 상담</strong>
+          <p>목둘레, 가슴둘레, 등길이와 착용 사진을 보내면 구매 전 핏을 함께 확인합니다.</p>
+        </div>
+        <div class="notice">
+          <b>MEMBERSHIP</b>
+          <strong>첫 구매 혜택</strong>
+          <p>런칭 기간에는 첫 구매 고객에게 사이즈 체크 가이드를 함께 제공합니다.</p>
+        </div>
+        <div class="notice">
+          <b>EXCHANGE</b>
+          <strong>교환 안내</strong>
+          <p>실측 기준과 착용 가능 체형을 명확히 안내해 교환 리스크를 줄입니다.</p>
+        </div>
+        <div class="notice">
+          <b>ABOUT</b>
+          <strong>INU WEAR</strong>
+          <p>데이터 기반 반려견 의류 브랜드로 2026년 하반기 매출 1억 원을 목표로 합니다.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <strong>INU WEAR</strong>
+        <p>예쁜 강아지 옷을 먼저 만드는 브랜드가 아니라, 견종별 체형과 움직임을 연구해 편하게 맞는 옷을 만드는 브랜드입니다.</p>
+      </div>
+      <div>
+        <strong>C/S CENTER</strong>
+        <p>AM 10:00 - PM 17:00</p>
+        <p>Lunch 12:30 - 13:30</p>
+        <p>Weekend Off</p>
+      </div>
+      <div>
+        <strong>CHANNEL</strong>
+        <a href="https://blog.naver.com/inu_wear" target="_blank" rel="noreferrer">Naver Blog</a>
+        <a href="#journal">Fit Lab Journal</a>
+        <a href="#guide">Size Guide</a>
+      </div>
+      <div>
+        <strong>ROADMAP</strong>
+        <p>2026.07 French Bulldog</p>
+        <p>2026.09 Italian Greyhound</p>
+        <p>2026.10 Welsh Corgi</p>
+      </div>
+    </div>
+  </footer>
+
+  <aside class="drawer" id="cartDrawer" aria-label="장바구니" aria-hidden="true">
+    <div class="drawer-head">
+      <strong>장바구니</strong>
+      <button class="icon-button" type="button" id="closeCart" aria-label="장바구니 닫기">×</button>
+    </div>
+    <div class="drawer-body" id="cartItems">
+      <p class="empty">아직 담긴 상품이 없습니다.</p>
+    </div>
+    <div class="drawer-foot">
+      <div class="product-foot">
+        <strong>합계</strong>
+        <strong id="cartTotal">0원</strong>
+      </div>
+      <button class="btn btn-dark" type="button">상담 후 주문하기</button>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast">상품을 담았습니다.</div>
+
+  <script>
+    const products = [
+      {
+        id: 1,
+        breed: "french",
+        launch: 1,
+        name: "프렌치불독 파랑 나시",
+        fit: "SLEEVELESS CHEST FIT",
+        desc: "넓은 가슴은 감싸고 앞다리 움직임은 열어둔 첫 샘플",
+        price: 39000,
+        badge: "SAMPLE 01",
+        image: "assets/french-blue-sleeveless.png",
+        gallery: [
+          { label: "착용", src: "assets/french-blue-sleeveless.png" },
+          { label: "원단", src: "assets/sample-blue-sleeveless-detail.jpeg" },
+          { label: "핏", src: "assets/french-blue-sleeveless.png" }
+        ],
+        colors: ["#8bb9d6", "#d8d4ca", "#fbfaf6"]
+      },
+      {
+        id: 2,
+        breed: "french",
+        launch: 2,
+        name: "프렌치불독 골지 티셔츠",
+        fit: "RIB TEE BALANCE",
+        desc: "목둘레 안정감과 짧은 등기장을 맞춘 데일리 티셔츠",
+        price: 42000,
+        badge: "SAMPLE 02",
+        image: "assets/french-rib-tee.png",
+        gallery: [
+          { label: "착용", src: "assets/french-rib-tee.png" },
+          { label: "패턴", src: "assets/sample-rib-tee-detail.jpeg" },
+          { label: "넥", src: "assets/french-rib-tee.png" }
+        ],
+        colors: ["#ede8dc", "#c8bcae", "#fbfaf6"]
+      },
+      {
+        id: 3,
+        breed: "french",
+        launch: 3,
+        name: "프렌치불독 트위드 반팔",
+        fit: "TWEED SHORT TEE",
+        desc: "구조감 있는 원단으로 가슴-등 비율을 또렷하게 잡은 샘플",
+        price: 49000,
+        badge: "SAMPLE 03",
+        image: "assets/french-tweed-short.png",
+        gallery: [
+          { label: "착용", src: "assets/french-tweed-short.png" },
+          { label: "앞", src: "assets/sample-tweed-front.jpeg" },
+          { label: "뒤", src: "assets/sample-tweed-back.jpeg" }
+        ],
+        colors: ["#f1e7d5", "#d8b86a", "#7c8f7a"]
+      },
+      {
+        id: 4,
+        breed: "iggy",
+        launch: 4,
+        name: "이탈리안그레이하운드 슬림핏 티셔츠",
+        fit: "LONG NECK BODY STUDY",
+        desc: "긴 목, 깊은 흉곽, 좁은 허리 기준으로 개발 예정인 라인",
+        price: 45000,
+        badge: "NEXT",
+        image: "assets/italian-greyhound-slim-tee.png",
+        gallery: [
+          { label: "착용", src: "assets/italian-greyhound-slim-tee.png" },
+          { label: "라인", src: "assets/italian-greyhound-slim-tee.png" },
+          { label: "핏", src: "assets/italian-greyhound-slim-tee.png" }
+        ],
+        colors: ["#e8dfd2", "#c8c0b5", "#456f58"]
+      },
+      {
+        id: 5,
+        breed: "corgi",
+        launch: 5,
+        name: "웰시코기 롱바디 핏 개발 예정",
+        fit: "BODY STUDY",
+        desc: "긴 몸통과 짧은 다리에 맞춘 밑단 높이 연구 라인",
+        price: 44000,
+        badge: "ROADMAP",
+        image: "https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=720&q=82",
+        gallery: [
+          { label: "예정", src: "https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=720&q=82" }
+        ],
+        colors: ["#8bb9d6", "#f1c768", "#fbfaf6"]
+      },
+      {
+        id: 6,
+        breed: "dachshund",
+        launch: 6,
+        name: "닥스훈트 롱백 핏 개발 예정",
+        fit: "BODY STUDY",
+        desc: "긴 등길이와 낮은 체고에 맞춘 허리 뜸 방지 패턴",
+        price: 44000,
+        badge: "ROADMAP",
+        image: "https://images.unsplash.com/photo-1612195583950-b8fd34c87093?auto=format&fit=crop&w=720&q=82",
+        gallery: [
+          { label: "예정", src: "https://images.unsplash.com/photo-1612195583950-b8fd34c87093?auto=format&fit=crop&w=720&q=82" }
+        ],
+        colors: ["#e97d64", "#fbfaf6", "#456f58"]
+      }
+    ];
+
+    const grid = document.querySelector("#productGrid");
+    const tabs = document.querySelectorAll(".tab");
+    const sortSelect = document.querySelector("#sortSelect");
+    const cartButton = document.querySelector("#cartButton");
+    const closeCart = document.querySelector("#closeCart");
+    const cartDrawer = document.querySelector("#cartDrawer");
+    const cartItems = document.querySelector("#cartItems");
+    const cartCount = document.querySelector("#cartCount");
+    const cartTotal = document.querySelector("#cartTotal");
+    const toast = document.querySelector("#toast");
+    const menuButton = document.querySelector("#menuButton");
+    const navLinks = document.querySelector("#navLinks");
+    const guideButton = document.querySelector("#guideButton");
+    const guideResult = document.querySelector("#guideResult");
+    let currentFilter = "all";
+    let cart = [];
+
+    function formatWon(value) {
+      return value.toLocaleString("ko-KR") + "원";
+    }
+
+    function renderProducts() {
+      const sorted = [...products].sort((a, b) => {
+        if (sortSelect.value === "low") return a.price - b.price;
+        if (sortSelect.value === "high") return b.price - a.price;
+        return a.launch - b.launch;
+      });
+      const filtered = sorted.filter((product) => currentFilter === "all" || product.breed === currentFilter || product.breed === "all");
+      grid.innerHTML = filtered.map((product) => `
+        <article class="product-card" data-product-id="${product.id}">
+          <div class="product-media">
+            <img src="${product.image}" alt="${product.name}" data-main-image="${product.id}">
+            <span class="badge">${product.badge}</span>
+          </div>
+          <div class="angle-strip" aria-label="${product.name} 이미지 보기">
+            ${product.gallery.map((item, index) => `
+              <button class="angle-thumb ${index === 0 ? "active" : ""}" type="button" data-product-gallery="${product.id}" data-gallery-src="${item.src}" aria-label="${product.name} ${item.label} 보기">
+                <img src="${item.src}" alt="${product.name} ${item.label}">
+              </button>
+            `).join("")}
+          </div>
+          <div class="product-body">
+            <div class="fit-line">${product.fit}</div>
+            <div class="product-title">${product.name}</div>
+            <p class="product-desc">${product.desc}</p>
+            <div class="swatches" aria-label="색상">
+              ${product.colors.map((color) => `<span class="swatch" style="background:${color}"></span>`).join("")}
+            </div>
+            <div class="product-foot">
+              <span class="price">${formatWon(product.price)}</span>
+              <button class="add-cart" type="button" aria-label="${product.name} 담기" data-add="${product.id}">+</button>
+            </div>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function renderCart() {
+      cartCount.textContent = cart.length;
+      const total = cart.reduce((sum, item) => sum + item.price, 0);
+      cartTotal.textContent = formatWon(total);
+      if (!cart.length) {
+        cartItems.innerHTML = '<p class="empty">아직 담긴 상품이 없습니다.</p>';
+        return;
+      }
+      cartItems.innerHTML = cart.map((item, index) => `
+        <div class="cart-item">
+          <img src="${item.image}" alt="${item.name}">
+          <div>
+            <strong>${item.name}</strong>
+            <span>${formatWon(item.price)}</span>
+          </div>
+          <button class="icon-button" type="button" aria-label="${item.name} 삭제" data-remove="${index}">×</button>
+        </div>
+      `).join("");
+    }
+
+    function openCart() {
+      cartDrawer.classList.add("open");
+      cartDrawer.setAttribute("aria-hidden", "false");
+    }
+
+    function closeCartDrawer() {
+      cartDrawer.classList.remove("open");
+      cartDrawer.setAttribute("aria-hidden", "true");
+    }
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add("show");
+      window.setTimeout(() => toast.classList.remove("show"), 1600);
+    }
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        tabs.forEach((item) => item.classList.remove("active"));
+        tab.classList.add("active");
+        currentFilter = tab.dataset.filter;
+        renderProducts();
+      });
+    });
+
+    document.querySelectorAll("[data-breed-link]").forEach((link) => {
+      link.addEventListener("click", () => {
+        const target = link.dataset.breedLink;
+        const tab = document.querySelector(`[data-filter="${target}"]`);
+        if (tab) window.setTimeout(() => tab.click(), 80);
+      });
+    });
+
+    sortSelect.addEventListener("change", renderProducts);
+
+    grid.addEventListener("click", (event) => {
+      const galleryButton = event.target.closest("[data-product-gallery]");
+      if (galleryButton) {
+        const productId = galleryButton.dataset.productGallery;
+        const card = galleryButton.closest(".product-card");
+        const mainImage = card.querySelector(`[data-main-image="${productId}"]`);
+        mainImage.src = galleryButton.dataset.gallerySrc;
+        card.querySelectorAll(".angle-thumb").forEach((button) => button.classList.remove("active"));
+        galleryButton.classList.add("active");
+        return;
+      }
+      const button = event.target.closest("[data-add]");
+      if (!button) return;
+      const product = products.find((item) => item.id === Number(button.dataset.add));
+      cart.push(product);
+      renderCart();
+      showToast("장바구니에 담았습니다.");
+    });
+
+    cartItems.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-remove]");
+      if (!button) return;
+      cart.splice(Number(button.dataset.remove), 1);
+      renderCart();
+    });
+
+    cartButton.addEventListener("click", openCart);
+    closeCart.addEventListener("click", closeCartDrawer);
+
+    menuButton.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    navLinks.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+    });
+
+    guideButton.addEventListener("click", () => {
+      const neck = Number(document.querySelector("#neckInput").value);
+      const chest = Number(document.querySelector("#chestInput").value);
+      const back = Number(document.querySelector("#backInput").value);
+      if (!neck || !chest || !back) {
+        guideResult.textContent = "세 가지 실측값을 모두 입력해 주세요.";
+        return;
+      }
+      if (chest - neck >= 16 && back <= 38) {
+        guideResult.textContent = "넓은 가슴과 짧은 등 비율입니다. 프렌치불독 핏처럼 앞판 여유와 짧은 기장을 우선 확인하세요.";
+      } else if (back >= 42 && chest < 50) {
+        guideResult.textContent = "등길이에 비해 가슴이 슬림한 편입니다. 닥스훈트 또는 롱바디 핏처럼 허리 뜸을 체크하세요.";
+      } else if (back >= 40 && chest >= 50) {
+        guideResult.textContent = "롱바디 체형 가능성이 있습니다. 배 부분이 끌리지 않는 밑단 높이와 암홀 위치를 확인하세요.";
+      } else {
+        guideResult.textContent = "기본 체형핏 범위입니다. 목이 뜨는지, 앞다리 움직임이 편한지 착용 사진으로 한 번 더 확인하세요.";
+      }
+    });
+
+    renderProducts();
+    renderCart();
+  </script>
+</body>
+</html>
