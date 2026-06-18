@@ -7,6 +7,9 @@
   <meta name="description" content="이누웨어는 견종별 체형과 움직임을 연구해 강아지에게 편하게 맞는 옷을 만드는 데이터 기반 반려견 의류 브랜드입니다.">
   <link rel="preconnect" href="https://images.unsplash.com">
   <link rel="preconnect" href="https://images.pexels.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root {
       --ink: #1f2623;
@@ -32,7 +35,7 @@
       margin: 0;
       color: var(--ink);
       background: var(--paper);
-      font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+      font-family: "Nunito", "Noto Sans KR", "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
       line-height: 1.55;
     }
 
@@ -218,31 +221,46 @@
     }
 
     .hero-visual {
+      min-height: 540px;
       display: grid;
-      justify-items: center;
-      gap: 22px;
+      align-items: center;
     }
 
-    .hero-logo-img {
-      width: min(360px, 84%);
+    .hero-wordmark {
+      width: 164px;
       height: auto;
+      margin-bottom: 22px;
+      mix-blend-mode: multiply;
+    }
+
+    .hero-lookbook {
+      position: relative;
+      min-height: 520px;
+      overflow: hidden;
       border-radius: var(--radius);
-      box-shadow: 0 20px 52px rgba(31, 38, 35, .1);
+      background: #f7efe4;
+      box-shadow: 0 26px 60px rgba(31, 38, 35, .14);
     }
 
-    .hero-product-rail {
+    .hero-lookbook img {
       width: 100%;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-    }
-
-    .hero-product-rail img {
-      width: 100%;
-      aspect-ratio: 4 / 5;
+      height: 100%;
+      min-height: 520px;
       object-fit: cover;
-      border-radius: var(--radius);
-      box-shadow: 0 16px 30px rgba(31, 38, 35, .12);
+    }
+
+    .hero-lookbook::after {
+      content: "INU WEAR COLLECTION";
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .78);
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: .12em;
     }
 
     .hero-actions, .section-actions {
@@ -566,13 +584,35 @@
 
     .swatches {
       display: flex;
-      gap: 7px;
+      flex-wrap: wrap;
+      gap: 8px;
       margin-bottom: 14px;
     }
 
-    .swatch {
-      width: 18px;
-      height: 18px;
+    .color-option {
+      min-height: 32px;
+      padding: 0 10px 0 7px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--white);
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .color-option.active {
+      border-color: var(--green);
+      color: var(--ink);
+      box-shadow: 0 0 0 2px rgba(69, 111, 88, .12);
+    }
+
+    .color-chip {
+      width: 16px;
+      height: 16px;
       border: 1px solid rgba(31,38,35,.18);
       border-radius: 50%;
     }
@@ -1456,6 +1496,7 @@
     <section class="hero" aria-label="이누웨어 소개">
       <div class="hero-inner">
         <div>
+          <img class="hero-wordmark" src="assets/inu-wear-logo.png" alt="INU WEAR">
           <p class="eyebrow">BREED-FIT DOGWEAR</p>
           <h1>몸에 맞아야, 오래 입습니다.</h1>
           <p class="hero-copy">INU WEAR는 견종마다 다른 목, 가슴, 등길이와 움직임을 고려해 편안한 착용감을 설계하는 반려견 의류 브랜드입니다.</p>
@@ -1465,11 +1506,8 @@
           </div>
         </div>
         <div class="hero-visual" aria-label="이누웨어 브랜드 이미지">
-          <img class="hero-logo-img" src="assets/inu-wear-logo.png" alt="INU WEAR 로고">
-          <div class="hero-product-rail">
-            <img src="assets/studio-blue-sleeveless-detail.png" alt="파랑 나시 제품컷">
-            <img src="assets/studio-rib-tee-detail.png" alt="골지 티셔츠 제품컷">
-            <img src="assets/studio-tweed-detail.png" alt="트위드 반팔 제품컷">
+          <div class="hero-lookbook">
+            <img src="assets/studio-tweed-detail.png" alt="INU WEAR 트위드 반팔 제품컷">
           </div>
         </div>
       </div>
@@ -1631,6 +1669,11 @@
                 <span>ITEM 01</span>
                 <h3>파랑 나시</h3>
                 <p>산뜻한 블루 톤과 가벼운 착용감이 특징인 데일리 슬리브리스입니다.</p>
+                <ul class="spec-list">
+                  <li><b>Fabric</b><span>heather knit</span></li>
+                  <li><b>Fit</b><span>sleeveless</span></li>
+                  <li><b>Point</b><span>open armhole</span></li>
+                </ul>
               </div>
             </article>
             <article class="sample-card">
@@ -1639,6 +1682,11 @@
                 <span>ITEM 02</span>
                 <h3>골지 티셔츠</h3>
                 <p>신축성 있는 골지 조직으로 몸을 부드럽게 감싸는 기본 티셔츠입니다.</p>
+                <ul class="spec-list">
+                  <li><b>Fabric</b><span>soft rib</span></li>
+                  <li><b>Fit</b><span>daily tee</span></li>
+                  <li><b>Point</b><span>stable neck</span></li>
+                </ul>
               </div>
             </article>
           </div>
@@ -1764,12 +1812,16 @@
         price: 39000,
         badge: "NEW",
         image: "assets/french-blue-sleeveless.png",
-        gallery: [
-          { label: "착용", src: "assets/french-blue-sleeveless.png" },
-          { label: "제품", src: "assets/studio-blue-sleeveless-detail.png" },
-          { label: "핏", src: "assets/french-blue-sleeveless.png" }
+        variants: [
+          { name: "Sky Blue", color: "#8bb9d6", image: "assets/french-blue-sleeveless.png" },
+          { name: "Oatmeal", color: "#d8d0c2", image: "assets/sleeveless-oatmeal-side.png" },
+          { name: "Sage", color: "#9aa98f", image: "assets/sleeveless-sage-back.png" }
         ],
-        colors: ["#8bb9d6", "#d8d4ca", "#fbfaf6"]
+        specs: [
+          ["Fabric", "heather knit"],
+          ["Fit", "sleeveless"],
+          ["Point", "open armhole"]
+        ]
       },
       {
         id: 2,
@@ -1781,12 +1833,16 @@
         price: 42000,
         badge: "BEST",
         image: "assets/french-rib-tee.png",
-        gallery: [
-          { label: "착용", src: "assets/french-rib-tee.png" },
-          { label: "제품", src: "assets/studio-rib-tee-detail.png" },
-          { label: "넥", src: "assets/french-rib-tee.png" }
+        variants: [
+          { name: "Ivory", color: "#ede8dc", image: "assets/french-rib-tee.png" },
+          { name: "Mocha", color: "#9c8370", image: "assets/rib-mocha-front.png" },
+          { name: "Charcoal", color: "#444443", image: "assets/rib-charcoal-back.png" }
         ],
-        colors: ["#ede8dc", "#c8bcae", "#fbfaf6"]
+        specs: [
+          ["Fabric", "soft rib"],
+          ["Fit", "daily tee"],
+          ["Point", "stable neck"]
+        ]
       },
       {
         id: 3,
@@ -1798,12 +1854,16 @@
         price: 49000,
         badge: "PREMIUM",
         image: "assets/french-tweed-short.png",
-        gallery: [
-          { label: "착용", src: "assets/french-tweed-short.png" },
-          { label: "제품", src: "assets/studio-tweed-detail.png" },
-          { label: "핏", src: "assets/french-tweed-short.png" }
+        variants: [
+          { name: "Cream", color: "#f1e7d5", image: "assets/french-tweed-short.png" },
+          { name: "Navy", color: "#25344d", image: "assets/tweed-navy-side.png" },
+          { name: "Blush", color: "#d8b7ae", image: "assets/tweed-blush-back.png" }
         ],
-        colors: ["#f1e7d5", "#d8b86a", "#7c8f7a"]
+        specs: [
+          ["Fabric", "cream tweed"],
+          ["Fit", "short sleeve"],
+          ["Point", "structured body line"]
+        ]
       },
       {
         id: 4,
@@ -1815,12 +1875,14 @@
         price: 45000,
         badge: "NEXT",
         image: "assets/italian-greyhound-slim-tee.png",
-        gallery: [
-          { label: "착용", src: "assets/italian-greyhound-slim-tee.png" },
-          { label: "라인", src: "assets/italian-greyhound-slim-tee.png" },
-          { label: "핏", src: "assets/italian-greyhound-slim-tee.png" }
+        variants: [
+          { name: "Cream", color: "#e8dfd2", image: "assets/italian-greyhound-slim-tee.png" }
         ],
-        colors: ["#e8dfd2", "#c8c0b5", "#456f58"]
+        specs: [
+          ["Fabric", "light rib"],
+          ["Fit", "slim long neck"],
+          ["Point", "deep chest line"]
+        ]
       }
     ];
 
@@ -1845,6 +1907,7 @@
     const menuButton = document.querySelector("#menuButton");
     const navLinks = document.querySelector("#navLinks");
     let currentFilter = "all";
+    let selectedVariants = {};
     let cart = [];
 
     function formatWon(value) {
@@ -1858,33 +1921,41 @@
         return a.launch - b.launch;
       });
       const filtered = sorted.filter((product) => currentFilter === "all" || product.breed === currentFilter || product.breed === "all");
-      grid.innerHTML = filtered.map((product) => `
-        <article class="product-card" data-product-id="${product.id}">
-          <div class="product-media">
-            <img src="${product.image}" alt="${product.name}" data-main-image="${product.id}">
-            <span class="badge">${product.badge}</span>
-          </div>
-          <div class="angle-strip" aria-label="${product.name} 이미지 보기">
-            ${product.gallery.map((item, index) => `
-              <button class="angle-thumb ${index === 0 ? "active" : ""}" type="button" data-product-gallery="${product.id}" data-gallery-src="${item.src}" aria-label="${product.name} ${item.label} 보기">
-                <img src="${item.src}" alt="${product.name} ${item.label}">
-              </button>
-            `).join("")}
-          </div>
-          <div class="product-body">
-            <div class="fit-line">${product.fit}</div>
-            <div class="product-title">${product.name}</div>
-            <p class="product-desc">${product.desc}</p>
-            <div class="swatches" aria-label="색상">
-              ${product.colors.map((color) => `<span class="swatch" style="background:${color}"></span>`).join("")}
+      grid.innerHTML = filtered.map((product) => {
+        const selectedIndex = selectedVariants[product.id] || 0;
+        const selected = product.variants[selectedIndex];
+        return `
+          <article class="product-card" data-product-id="${product.id}">
+            <div class="product-media">
+              <img src="${selected.image}" alt="${product.name} ${selected.name}" data-main-image="${product.id}">
+              <span class="badge">${product.badge}</span>
             </div>
-            <div class="product-foot">
-              <span class="price">${formatWon(product.price)}</span>
-              <button class="add-cart" type="button" aria-label="${product.name} 담기" data-add="${product.id}">+</button>
+            <div class="angle-strip" aria-label="${product.name} 색상별 착용컷">
+              ${product.variants.map((variant, index) => `
+                <button class="angle-thumb ${index === selectedIndex ? "active" : ""}" type="button" data-product-variant="${product.id}" data-variant-index="${index}" aria-label="${product.name} ${variant.name} 보기">
+                  <img src="${variant.image}" alt="${product.name} ${variant.name}">
+                </button>
+              `).join("")}
             </div>
-          </div>
-        </article>
-      `).join("");
+            <div class="product-body">
+              <div class="fit-line">${product.fit}</div>
+              <div class="product-title">${product.name}</div>
+              <p class="product-desc">${product.desc}</p>
+              <div class="swatches" aria-label="${product.name} 색상 선택">
+                ${product.variants.map((variant, index) => `
+                  <button class="color-option ${index === selectedIndex ? "active" : ""}" type="button" data-product-variant="${product.id}" data-variant-index="${index}">
+                    <span class="color-chip" style="background:${variant.color}"></span>${variant.name}
+                  </button>
+                `).join("")}
+              </div>
+              <div class="product-foot">
+                <span class="price">${formatWon(product.price)}</span>
+                <button class="add-cart" type="button" aria-label="${product.name} ${selected.name} 담기" data-add="${product.id}">+</button>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join("");
     }
 
     function renderCart() {
@@ -1903,7 +1974,7 @@
           <img src="${item.image}" alt="${item.name}">
           <div>
             <strong>${item.name}</strong>
-            <span>${formatWon(item.price)} / ${item.fit}</span>
+            <span>${item.colorName} / ${formatWon(item.price)}</span>
             <div class="qty-row">
               <button class="qty-button" type="button" aria-label="${item.name} 수량 줄이기" data-qty="${index}" data-delta="-1">−</button>
               <span class="qty-count">${item.qty}</span>
@@ -1915,7 +1986,7 @@
       `).join("");
       checkoutSummary.innerHTML = cart.map((item) => `
         <div class="summary-item">
-          <span>${item.name} × ${item.qty}</span>
+          <span>${item.name} (${item.colorName}) × ${item.qty}</span>
           <b>${formatWon(item.price * item.qty)}</b>
         </div>
       `).join("");
@@ -1974,27 +2045,33 @@
     sortSelect.addEventListener("change", renderProducts);
 
     grid.addEventListener("click", (event) => {
-      const galleryButton = event.target.closest("[data-product-gallery]");
-      if (galleryButton) {
-        const productId = galleryButton.dataset.productGallery;
-        const card = galleryButton.closest(".product-card");
-        const mainImage = card.querySelector(`[data-main-image="${productId}"]`);
-        mainImage.src = galleryButton.dataset.gallerySrc;
-        card.querySelectorAll(".angle-thumb").forEach((button) => button.classList.remove("active"));
-        galleryButton.classList.add("active");
+      const variantButton = event.target.closest("[data-product-variant]");
+      if (variantButton) {
+        selectedVariants[variantButton.dataset.productVariant] = Number(variantButton.dataset.variantIndex);
+        renderProducts();
         return;
       }
       const button = event.target.closest("[data-add]");
       if (!button) return;
       const product = products.find((item) => item.id === Number(button.dataset.add));
-      const existing = cart.find((item) => item.id === product.id);
+      const selectedIndex = selectedVariants[product.id] || 0;
+      const selected = product.variants[selectedIndex];
+      const existing = cart.find((item) => item.id === product.id && item.colorName === selected.name);
       if (existing) {
         existing.qty += 1;
       } else {
-        cart.push({ ...product, qty: 1 });
+        cart.push({
+          id: product.id,
+          name: product.name,
+          fit: product.fit,
+          price: product.price,
+          image: selected.image,
+          colorName: selected.name,
+          qty: 1
+        });
       }
       renderCart();
-      showToast("장바구니에 담았습니다.");
+      showToast(`${selected.name} 색상을 담았습니다.`);
     });
 
     cartItems.addEventListener("click", (event) => {
